@@ -33,6 +33,17 @@ store.subscribe(() => {
     const state = store.getState()
     counter.textContent = state.counter
     document.body.className = state.theme.value
+
+
+    const buttons = document.getElementsByClassName('buttons')
+    Array.from(buttons).forEach((btn) => {
+        if (state.theme.elements_state === 'disable') {
+            btn.disabled = true
+        } else {
+            btn.disabled = false
+        }
+    })
+
 })
 
 store.dispatch({type: 'INIT_APPLICATION'})

@@ -1,4 +1,4 @@
-import {CHANGE_THEME, DECREMENT, INCREMENT} from "./types";
+import { CHANGE_THEME, DECREMENT, CHANGE_ELEMENT, INCREMENT} from "./types";
 import {combineReducers} from "redux";
 
 // это абсолютно синхронное событие!!!
@@ -12,14 +12,18 @@ function counterReducer(state = 0, action) {
 }
 
 const initialThemeState = {
-    value: 'light'
+    value: 'light',
+    elements_state: 'enable'
 }
 
 function themeReducer(state = initialThemeState, action) {
     switch (action.type) {
         case CHANGE_THEME:
             return {...state, value: action.payload}
-        default: return state
+        case CHANGE_ELEMENT:
+            return {...state, elements_state: action.payload}
+        default:
+            return state
     }
 }
 

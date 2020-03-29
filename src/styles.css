@@ -16,6 +16,10 @@ body.dark .card {
   border: 1px solid rgba(0,0,0,.875);
 }
 
+/*.buttons.disabled {*/
+/*  */
+/*}*/
+
 .heading {
   display: flex;
   align-items: center;
